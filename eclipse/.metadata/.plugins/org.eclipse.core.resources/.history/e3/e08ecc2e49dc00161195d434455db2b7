@@ -1,0 +1,18 @@
+package com.ModMayhem.POTCMod.World;
+
+import com.ModMayhem.POTCMod.POTCMod;
+
+import net.minecraft.world.WorldProvider;
+import net.minecraft.world.biome.WorldChunkManager;
+
+public class LockerWorldProvider extends WorldProvider{
+	private float[] colorsSunriseSunset = new float[4];
+public void registerWorldChunkManager(){
+	this.worldChunkMgr = new WorldChunkManager(POTCMod.LockerBiome, this.dimensionId,this.dimensionId);
+}
+	
+	public String getDimensionName() {
+		return "Locker";
+	}
+
+}

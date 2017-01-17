@@ -1,0 +1,20 @@
+package com.ModMayhem.POTCMod.World;
+
+import net.minecraft.block.material.Material;
+import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraft.world.gen.feature.WorldGenerator;
+
+public class LockerBiome extends BiomeGenBase{
+private WorldGenerator LockerBiomeGeneratorCrashedShip1;
+public final Material blockMaterial;
+public LockerBiome(int par1) {
+		super(par1);
+		this.blockMaterial = Material.water;
+		this.minHeight = 0.1F;
+		this.maxHeight = 0.1F;
+		this.spawnableMonsterList.clear();
+		this.spawnableCreatureList.clear();
+	}
+
+
+}
