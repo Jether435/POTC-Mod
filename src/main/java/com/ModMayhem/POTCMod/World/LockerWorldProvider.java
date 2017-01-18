@@ -15,7 +15,7 @@ import net.minecraftforge.client.IRenderHandler;
 public class LockerWorldProvider extends WorldProvider{
 	IRenderHandler skyRenderer;
 public void registerWorldChunkManager(){
-	this.worldChunkMgr = new WorldChunkManager(POTCMod.LockerBiome, this.dimensionId,this.dimensionId);
+	this.worldChunkMgr = new WorldChunkManager(POTCMod.LockerChunkProvider, this.dimensionId,this.dimensionId);
 	this.dimensionId = POTCMod.DimID;
 	this.hasNoSky = true;
 }
@@ -26,12 +26,10 @@ public void registerWorldChunkManager(){
 public int getAverageGroundLevel(){
 	return 0;
 }
-@Override
-public Vec3 getSkyColor(Entity cameraEntity, float partialTicks)
+public Vec3 getSkyColor()
 {
-	 return red.x = 0.0;
+	 return new Vec3(0, 0, 0);
 }
-
 @Override
 public boolean isSkyColored()
 {

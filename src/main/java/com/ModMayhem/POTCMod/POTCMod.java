@@ -16,19 +16,20 @@ public class POTCMod {
 	public static int DimID = 2;
 public static final String MODID = "POTCMod";
 public static final String Version = "1.0";
-public static Block LockerSand = new LockerSand(w).setUnlocalizedName("POTC:LockerSand");
+public static Block LockerSand;
+
 @EventHandler
 public void init (FMLPreInitializationEvent event){
-	
+
 }
 @EventHandler
 public void init (FMLInitializationEvent event){
-	GameRegistry.registerBlock(LockerSand, "LockerSand");
-	DimensionManager.registerProviderType(DimID, LockerWorldProvider.class, true);
+		DimensionManager.registerProviderType(DimID, LockerWorldProvider.class, true);
 	DimensionManager.registerDimension(DimID, DimID);
 }
 @EventHandler
 public void init (FMLPostInitializationEvent event){
-	
+
 }
 }
+//LockerSand = (new LockerSandBlock()).setBlockName("LockerSand");

@@ -1,7 +1,16 @@
 package com.ModMayhem.POTCMod.Entity;
 
-public class EntityGhostMan {
-	   public boolean getCanSpawnHere()
+import net.minecraft.entity.monster.EntityMob;
+import net.minecraft.world.World;
+
+public class EntityGhostMan extends EntityMob{
+	
+	   public EntityGhostMan(World p_i1738_1_) {
+		super(p_i1738_1_);
+		this.noClip = true;
+	}
+
+	public boolean getCanSpawnHere()
 	    {
 	        return this.worldObj.checkNoEntityCollision(this.boundingBox);
 	    }

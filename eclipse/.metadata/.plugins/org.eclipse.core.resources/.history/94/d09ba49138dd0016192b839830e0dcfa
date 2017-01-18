@@ -1,0 +1,11 @@
+package com.ModMayhem.POTCMod.Entity;
+
+import net.minecraft.entity.Entity;
+import net.minecraft.world.World;
+
+public class EntityShip extends Entity{
+	   public EntityShip(World p_i1582_1_) {
+		super(p_i1582_1_);
+		// TODO Auto-generated constructor stub
+	   }
+}
