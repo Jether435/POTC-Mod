@@ -19,14 +19,20 @@ public LockerBiome(int par1) {
 		this.temperature = 20F;
 		this.spawnableMonsterList.clear();
 		this.spawnableCreatureList.clear();
+		spawnableCreatureList.add(new SpawnListEntry(com.ModMayhem.POTCMod.Entity.EntityRockCrab.class, 12, 4, 4));
 		final Block topBlockID = POTCMod.LockerSand;
 		final Block fillBlockID = POTCMod.LockerSand;
-		this.spawnableMonsterList = List<EntityRockCrab.class>;
 		this.enableRain = false;
 		this.enableSnow = false;
 		this.setBiomeName("Locker");
 		this.waterColorMultiplier = 0xffffff;
+		
+		
 	}
-
+@Override
+public float getSpawningChance()
+{
+    return 0.12F;
+}
 
 }

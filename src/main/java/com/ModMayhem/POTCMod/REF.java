@@ -1,5 +1,7 @@
 package com.ModMayhem.POTCMod;
 
-public class REF {
+import net.minecraft.entity.passive.EntitySquid;
+
+public class REF{
 
 }

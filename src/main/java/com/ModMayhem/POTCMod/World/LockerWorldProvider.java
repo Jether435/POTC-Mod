@@ -14,46 +14,55 @@ import net.minecraftforge.client.IRenderHandler;
 
 public class LockerWorldProvider extends WorldProvider{
 	IRenderHandler skyRenderer;
-public void registerWorldChunkManager(){
-	this.worldChunkMgr = new WorldChunkManager(POTCMod.LockerChunkProvider, this.dimensionId,this.dimensionId);
+	public LockerChunkProvider chunkProvider;
+public void registerWorldManager(){
 	this.dimensionId = POTCMod.DimID;
 	this.hasNoSky = true;
 }
-	
+@Override
+public float[] calcSunriseSunsetColors(float celestialAngle, float f1) {
+	return null;
+	}
 	public String getDimensionName() {
 		return "Locker";
 	}
 public int getAverageGroundLevel(){
 	return 0;
 }
-public Vec3 getSkyColor()
+@Override
+public Vec3 getFogColor(float f, float f1)
 {
-	 return new Vec3(0, 0, 0);
+	return Vec3.createVectorHelper(255, 255, 255);
 }
 @Override
 public boolean isSkyColored()
 {
 	 return true;
 }
+@Override
 public boolean canRespawnHere()
 {
 return false;
 }
-public boolean isSurfaceWorld()
-{
-return true;
-}
-public boolean canCoordinateBeSpawn(int par1, int par2)
-{
-return false;
-}
-@SideOnly(Side.CLIENT)
+@Override
 public String getWelcomeMessage()
-{
-if ((this instanceof LockerWorldProvider))
 {
 return "You have been Damned to Davy Jones' Locker!";
 }
-return null;
+@Override
+public String getDepartMessage() {
+	return "You Will Never Be Free From Me, You... PIRATE!";
+}
+@Override
+public boolean isDaytime() {
+	return true;
+}
+@Override
+public Vec3 getSkyColor(Entity cameraEntity, float partialTicks) {
+	return Vec3.createVectorHelper(255, 255, 255);
+}
+@Override
+public float getStarBrightness(float par1) {
+	return 0.0F;
 }
 }

@@ -18,26 +18,14 @@ import net.minecraft.world.gen.NoiseGeneratorOctaves;
 public class LockerChunkProvider implements IChunkProvider{
 private Random rand;
 private World worldObj;
-private final boolean mapFeaturesEnabled;
 private BiomeGenBase[] biomesForGeneration;
-public LockerChunkProvider(World par1World, long par2, boolean par4){
-	this.worldObj = par1World;
-	this.mapFeaturesEnabled = par4;
-	this.rand = new Random(par2);
-}
 	public boolean chunkExists(int par1, int par2) {
 		return true;
 	}
-
+	
 	public Chunk provideChunk(int p_73154_1_, int p_73154_2_) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	public Chunk loadChunk(int p_73158_1_, int p_73158_2_) {
-		// TODO Auto-generated method stub
-		return null;
+		Chunk chunk = new Chunk(worldObj, null, null, p_73154_2_, p_73154_2_);	
+		return chunk;
 	}
 
 	public void populate(IChunkProvider par1IChunkProvider, int par2, int par3) {
@@ -61,9 +49,7 @@ public LockerChunkProvider(World par1World, long par2, boolean par4){
 		return null;
 	}
 
-	public List getPossibleCreatures(EnumCreatureType p_73155_1_, int p_73155_2_, int p_73155_3_, int p_73155_4_) {
-		return POTCMod.EntityRockCrab;
-	}
+
 	public int getLoadedChunkCount() {
 		return 0;
 	}
@@ -79,6 +65,12 @@ public LockerChunkProvider(World par1World, long par2, boolean par4){
 	@Override
 	public ChunkPosition func_147416_a(World p_147416_1_, String p_147416_2_, int p_147416_3_, int p_147416_4_,
 			int p_147416_5_) {
+		return null;
+	}
+
+	@Override
+	public Chunk loadChunk(int p_73158_1_, int p_73158_2_) {
+		// TODO Auto-generated method stub
 		return null;
 	}
 
