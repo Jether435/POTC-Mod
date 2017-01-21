@@ -1,5 +1,5 @@
 package com.ModMayhem.POTCMod.Entity;
 
-public class EntityKrakenParts {
+public class EntityGiantCrabUnderside {
 
 }

@@ -70,7 +70,11 @@ private BiomeGenBase[] biomesForGeneration;
 
 	@Override
 	public Chunk loadChunk(int p_73158_1_, int p_73158_2_) {
-		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List getPossibleCreatures(EnumCreatureType p_73155_1_, int p_73155_2_, int p_73155_3_, int p_73155_4_) {
 		return null;
 	}
 
