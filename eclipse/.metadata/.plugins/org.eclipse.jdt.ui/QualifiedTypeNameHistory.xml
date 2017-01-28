@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="cpw.mods.fml.common.event.FMLPostInitializationEvent"/>
 <fullyQualifiedTypeName name="net.minecraft.item.ItemSword"/>
 <fullyQualifiedTypeName name="cpw.mods.fml.common.registry.GameRegistry"/>
 <fullyQualifiedTypeName name="net.minecraftforge.common.DimensionManager"/>
@@ -57,7 +56,8 @@
 <fullyQualifiedTypeName name="net.minecraft.entity.ai.EntityAIBreakDoor"/>
 <fullyQualifiedTypeName name="net.minecraft.entity.ai.EntityAISwimming"/>
 <fullyQualifiedTypeName name="net.minecraft.entity.monster.IMob"/>
-<fullyQualifiedTypeName name="net.minecraft.entity.monster.EntityMob"/>
 <fullyQualifiedTypeName name="com.ModMayhem.POTCMod.Entity.AI.EntityAICharge"/>
+<fullyQualifiedTypeName name="cpw.mods.fml.common.registry.EntityRegistry"/>
 <fullyQualifiedTypeName name="net.minecraft.entity.player.EntityPlayer"/>
+<fullyQualifiedTypeName name="net.minecraft.entity.monster.EntityMob"/>
 </qualifiedTypeNameHistroy>

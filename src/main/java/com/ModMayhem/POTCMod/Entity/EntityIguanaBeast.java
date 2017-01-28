@@ -46,6 +46,27 @@ public class EntityIguanaBeast extends EntityMob implements IEntityMultiPart, IM
 		Collections.addAll(partList, partArray);
 		this.ignoreFrustumCheck = true;
 		isImmuneToFire = true;
+		
+		@Override
+	    public void onLivingUpdate() {
+			super.onLivingUpdate();
+			float f = this.getBrightness(1.0F);
+
+	        if (f > 0.5F)
+	        {
+	            this.entityAge += 2;
+	        }
+			body.onUpdate();
+			if (!this.worldObj.isRemote){
+				this.dataWatcher.updateObject((int) Health, Integer.valueOf((int)this.getHealth()));
+			
+			}
+			else{
+				if (this.getHealth() > 0){
+					this.deathTime = 0;
+				}
+				return;
+			}
 	   public EntityIguanaBeast(World world, double x, double y, double z)
 	    {
 	        this(world);
@@ -58,20 +79,7 @@ public class EntityIguanaBeast extends EntityMob implements IEntityMultiPart, IM
 	        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(Health);
 	        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.28D);
 	    }
-	@SuppressWarnings("unchecked")
-	@Override
-    public void onLivingUpdate()
-    {
-		body.onUpdate();
-		if (!this.worldObj.isRemote){
-			this.dataWatcher.updateObject((int) Health, Integer.valueOf((int)this.getHealth()));
-		
-		}
-		else{
-			if (this.getHealth() > 0){
-				this.deathTime = 0;
-			}
-		}
+		{
 		this.TimeSinceDamage++;
 		if (!this.worldObj.isRemote && this.TimeSinceDamage > HealWait && this.TimeSinceDamage % 5 == 0){
 			this.heal(2);
@@ -117,7 +125,7 @@ public class EntityIguanaBeast extends EntityMob implements IEntityMultiPart, IM
     			moveStrafing = 0.0F;
     			moveForward = 0.0F;
     		}
-    		private void attackEntity(Entity target, float distance) {
+    		private void attackEntityHere(Entity target, float distance) {
     			int BiteChance = 10;
     			boolean targetAbove = target.boundingBox.minY > this.boundingBox.maxY;   
     			if (distance > 1 && distance < 10 && rand.nextInt(BiteChance) == 0){
@@ -199,4 +207,15 @@ public class EntityIguanaBeast extends EntityMob implements IEntityMultiPart, IM
     			    		
     			    	}
     			    	// At ATTACKFROMPART
+						@Override
+						public World func_82194_d() {
+							// TODO Auto-generated method stub
+							return worldObj;
+						}
+						@Override
+						public boolean attackEntityFromPart(EntityDragonPart p_70965_1_, DamageSource p_70965_2_,
+								float p_70965_3_) {
+							// TODO Auto-generated method stub
+							return false;
+						}
     	}
